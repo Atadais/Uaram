@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
   <title>Меню · Uaram</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -215,13 +215,17 @@
       border: 1px solid rgba(74, 94, 63, 0.1);
       color: #5a5650;
       text-decoration: none;
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       transition: all 0.4s ease;
       border-radius: 0;
       font-weight: 400;
       position: relative;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .menu-nav a::after {
@@ -611,6 +615,14 @@
     }
 
     /* ===== RESPONSIVE ===== */
+    @media (max-width: 1200px) {
+      .menu-nav a {
+        padding: 0.6rem 1.4rem;
+        font-size: 0.7rem;
+        min-height: 40px;
+      }
+    }
+
     @media (max-width: 992px) {
       .navbar {
         padding-left: 1.5rem;
@@ -647,6 +659,11 @@
       .lightbox-content img {
         max-width: 80vw;
         max-height: 75vh;
+      }
+      .menu-nav a {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.7rem;
+        min-height: 38px;
       }
     }
 
@@ -744,13 +761,33 @@
         font-size: 1.6rem;
       }
 
+      /* ===== КНОПКИ НАВИГАЦИИ МЕНЮ НА СМАРТФОНАХ ===== */
       .menu-nav {
-        gap: 0.4rem;
+        gap: 0.5rem;
+        justify-content: center;
+        padding-bottom: 1rem;
       }
 
       .menu-nav a {
-        padding: 0.4rem 1rem;
-        font-size: 0.6rem;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.06em;
+        min-height: 48px;
+        min-width: 60px;
+        border-radius: 0;
+        border-color: rgba(74, 94, 63, 0.08);
+        flex: 0 1 auto;
+      }
+
+      .menu-nav a::after {
+        bottom: 0;
+        height: 2px;
+      }
+
+      .menu-nav a:hover,
+      .menu-nav a.active {
+        border-color: #4a5e3f;
+        background: rgba(74, 94, 63, 0.04);
       }
 
       .lightbox-content {
@@ -819,9 +856,16 @@
         font-size: 1.8rem;
       }
 
+      .menu-nav {
+        gap: 0.4rem;
+      }
+
       .menu-nav a {
-        padding: 0.3rem 0.8rem;
-        font-size: 0.55rem;
+        padding: 0.6rem 0.9rem;
+        font-size: 0.75rem;
+        min-height: 44px;
+        min-width: 50px;
+        letter-spacing: 0.04em;
       }
 
       .lightbox-content {
